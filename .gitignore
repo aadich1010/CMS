@@ -1,0 +1,48 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Production & Build outputs
+dist/
+dist-desktop/
+dist-installer/win-unpacked/
+dist-release/
+build/
+coverage/
+
+# Logs & Temporary files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+logs/
+transaction_logs/
+*.txt.bak
+*.cjs.bak
+
+# OS & Editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln.docstates
+
+# Environment & Secrets
+.env*
+!.env.example
+keys/*_private.pem
+
+# Clinic data and encrypted archives
+data_sync.json
+backups/
+cliniccore_licenses.txt
+host.lock
+/.env
+*.tmp
+

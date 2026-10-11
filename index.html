@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ClinicCore Workstation v1.0</title>
+    <meta name="description" content="Clinic management workstation built with React, TypeScript, and Express." />
+    <meta property="og:title" content="ClinicCore Workstation" />
+    <meta property="og:description" content="Clinic management workstation built with React, TypeScript, and Express." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet" />
+    <!-- Zero-Hydration-Flicker Clinical Theme Pre-Paint Injector -->
+    <script>
+      (function() {
+        try {
+          var savedTokens = localStorage.getItem('cliniccore_theme_tokens');
+          var savedId = localStorage.getItem('cliniccore_active_theme') || '03';
+          var root = document.documentElement;
+          if (savedTokens) {
+            var t = JSON.parse(savedTokens);
+            if (t.canvasBg) root.style.setProperty('--canvas-bg', t.canvasBg);
+            if (t.cardBg) root.style.setProperty('--card-bg', t.cardBg);
+            if (t.borderColor) root.style.setProperty('--border-color', t.borderColor);
+            if (t.accentColor) root.style.setProperty('--accent-color', t.accentColor);
+            if (t.textColor) root.style.setProperty('--text-color', t.textColor);
+            if (t.canvasBg) root.style.setProperty('--color-canvas', t.canvasBg);
+            if (t.cardBg) root.style.setProperty('--color-surface-card', t.cardBg);
+            if (t.borderColor) root.style.setProperty('--color-border-default', t.borderColor);
+            if (t.accentColor) root.style.setProperty('--color-primary-clinical', t.accentColor);
+            if (t.textColor) root.style.setProperty('--color-text-primary', t.textColor);
+          } else {
+            root.style.setProperty('--canvas-bg', '#F0FDFA');
+            root.style.setProperty('--card-bg', 'rgba(255, 255, 255, 0.40)');
+            root.style.setProperty('--border-color', 'rgba(13, 148, 136, 0.15)');
+            root.style.setProperty('--accent-color', '#0D9488');
+            root.style.setProperty('--text-color', '#115E59');
+          }
+          root.setAttribute('data-theme-id', savedId);
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body class="antialiased selection:bg-teal-500 selection:text-white" style="background-color: var(--canvas-bg, #F8FAFC); color: var(--text-color, #0F172A);">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

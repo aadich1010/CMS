@@ -1,0 +1,83 @@
+{
+  "name": "cliniccore-workstation",
+  "private": true,
+  "version": "1.0.0",
+  "main": "main.cjs",
+  "scripts": {
+    "dev": "tsx server.ts",
+    "build": "vite build && esbuild server.ts --bundle --platform=node --format=cjs --define:IS_PRODUCTION_BUILD=true --external:vite --external:lightningcss --external:esbuild --sourcemap --outfile=dist/server.cjs",
+    "start": "node dist/server.cjs",
+    "desktop": "electron main.cjs",
+    "desktop:build": "npm run build && electron-builder build --win portable --dir",
+    "desktop:dist": "npm run build && electron-builder build --win portable",
+    "test": "npm run build && node --test",
+    "preview": "vite preview",
+    "package:airgap": "tsx scripts/package-workstation.ts",
+    "license:gen": "tsx scripts/license-gen.ts",
+    "license:fingerprint": "tsx scripts/license-gen.ts --fingerprint",
+    "clean": "node -e \"const fs=require('node:fs'); fs.rmSync('dist',{recursive:true,force:true}); fs.rmSync('server.js',{force:true})\"",
+    "lint": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@google/genai": "^2.4.0",
+    "@tailwindcss/vite": "^4.1.14",
+    "@types/jszip": "^3.4.1",
+    "@types/qrcode": "^1.5.6",
+    "@vitejs/plugin-react": "^5.0.4",
+    "dotenv": "^17.2.3",
+    "express": "^4.21.2",
+    "jspdf": "^4.2.1",
+    "jspdf-autotable": "^5.0.8",
+    "jszip": "^3.10.1",
+    "lucide-react": "^0.546.0",
+    "motion": "^12.23.24",
+    "mysql2": "^3.24.3",
+    "qrcode": "^1.5.4",
+    "qrcode.react": "^4.2.0",
+    "react": "^19.0.1",
+    "react-dom": "^19.0.1",
+    "recharts": "^3.10.1",
+    "vite": "^6.2.3",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.14.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "autoprefixer": "^10.4.21",
+    "electron": "^44.5.1",
+    "electron-builder": "^26.15.3",
+    "esbuild": "^0.25.0",
+    "tailwindcss": "^4.1.14",
+    "tsx": "^4.21.0",
+    "typescript": "~5.8.2",
+    "vite": "^6.2.3"
+  },
+  "build": {
+    "appId": "com.cliniccore.workstation",
+    "productName": "ClinicCore Workstation v1.0",
+    "directories": {
+      "output": "dist-installer"
+    },
+    "asar": false,
+    "files": [
+      "dist/**/*",
+      "main.cjs",
+      "package.json"
+    ],
+    "win": {
+      "target": "nsis",
+      "artifactName": "ClinicCore-v1.0-Setup.exe"
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false,
+      "allowElevation": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "ClinicCore Workstation v1.0",
+      "runAfterFinish": true
+    }
+  }
+}

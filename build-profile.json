@@ -1,0 +1,43 @@
+{
+  "tenant": {
+    "tenant_id": "peds_child_care",
+    "clinic_legal_name": "KidsCare Pediatric & Child Health Clinic",
+    "license_tier": "ENTERPRISE_ONPREM",
+    "contact_email": "info@kidscare.med",
+    "contact_phone": "+92-42-35889911",
+    "deployment_date": "2026-10-07T12:05:05.100Z"
+  },
+  "branding": {
+    "clinic_name": "KidsCare Pediatric Clinic",
+    "tagline": "Child Health, Neonatology & EPI Immunization Center",
+    "logo_url": "/assets/cliniccore-logo.png",
+    "primary_color": "#0284c7",
+    "secondary_color": "#0369a1",
+    "accent_color": "#38bdf8",
+    "currency_symbol": "Rs. ",
+    "address": "Children's Health Complex, Main Boulevard, Lahore",
+    "phone": "+92 42 3588 9911"
+  },
+  "features": {
+    "ai_voice_scribe": false,
+    "ai_assistant": false,
+    "telemedicine": false,
+    "advanced_analytics": true,
+    "pharmacy_pos": true,
+    "inventory_sync": true,
+    "lab_integration": true,
+    "billing_insurance": true,
+    "sms_gateway": false
+  },
+  "hardware_binding": {
+    "target_hardware_fingerprint": "AUTO_BIND_ON_FIRST_BOOT",
+    "motherboard_uuid": "AUTO",
+    "cpu_id": "AUTO",
+    "primary_mac": "AUTO"
+  },
+  "licensing": {
+    "max_lan_seats": 10,
+    "lease_timeout_minutes": 30,
+    "valid_until_timestamp": 4294967295
+  }
+}
